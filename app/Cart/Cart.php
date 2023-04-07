@@ -4,6 +4,7 @@ namespace App\Cart;
 
 use App\Cart\Contracts\CartInterface;
 use App\Models\User; 
+use Cknow\Money\Money;
 use App\Models\Variation; 
 use App\Models\Cart as ModelsCart;
 use Illuminate\Session\SessionManager;
@@ -51,6 +52,25 @@ class Cart implements CartInterface
         ]);
     }
 
+    public function changeQuantity(Variation $variation,$quantity)
+    {
+        $this->instance()->variations()->updateExistingPivot($variation->id, [
+            'quantity' => min($quantity, $variation->stockCount())
+        ]);
+    }
+
+    public function remove(Variation $variation)
+    {
+        $this->instance()->variations()->detach($variation);
+
+
+    }
+
+    public function isEmpty()
+    {
+        return $this->contentsCount() === 0;
+    }
+
     public function getVariation(Variation $variation)
     {
         return $this->instance()->variations->find($variation->id);
@@ -66,6 +86,19 @@ class Cart implements CartInterface
         return $this->contents()->count();
     }
 
+    public function subtotal()
+    {
+        return $this->instance()->variations
+            ->reduce(function($carry,$variation){
+                return $carry + ($variation->price * $variation->pivot->quantity);
+            });
+    
+    }
+
+    public function formattedSubtotal()
+    {
+        return Money::TRY($this->subtotal(),true);
+    }
 
     public function instance()
     {
@@ -75,7 +108,10 @@ class Cart implements CartInterface
             return $this->instance;
         }
 
-        return $this->instance = ModelsCart::whereUuid($this->session->get(config('cart.session.key')))->first();
+        return $this->instance = ModelsCart::query()
+            ->with('variations.product','variations.media','variations.descendantsAndSelf.stocks')    
+            ->whereUuid($this->session->get(config('cart.session.key')))
+            ->first();
     }
 
 } 
