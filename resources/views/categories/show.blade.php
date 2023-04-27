@@ -18,5 +18,5 @@
         </h2>
     </x-slot>
 
-    @livewire('product-browser',["category" => $category->toArray()])
+    @livewire('product-browser',["category" => $category])
 </x-app-layout>

@@ -3,39 +3,53 @@
         <div class="space-y-6">
             <div class="space-y-1">
                 <ul>
+                    @foreach ($category->children as $child)    
                     <li>
                         <a href="" class="text-indigo-500">
-                            Category child
+                            {{$child->title}}
                         </a>
                     </li>
+                    @endforeach
                 </ul>
             </div>
 
-            <div class="space-y-6">
-                <div class="space-y-1">
-                    <div class="font-semibold">Max price ($0)</div>
-                    <div class="flex items-center space-x-2">
-                        <input type="range" min="0" max="">
-                    </div>
-                </div>
 
+
+            <div class="space-y-6">
+                @if ($category->products->count())
                 <div class="space-y-1">
-                    <div class="font-semibold">Filter title</div>
+                    <div class="font-semibold">Max price ({{money(number_format($priceRange['max']) )}})</div>
                     <div class="flex items-center space-x-2">
-                        <input type="checkbox" id="" value=""> <label for="">Filter (count)</label>
+                        <input type="range" min="0" max="{{$maxPrice}}" wire:model="priceRange.max">
                     </div>
                 </div>
+                @endif
+                @if ($products->count())
+                    
+                
+                <div class="space-y-1">
+                    @foreach ($filters as $title => $filter)    
+                    <div class="font-semibold">{{Str::title($title)}}</div>
+                    @foreach ($filter as $option => $count)    
+                    <div class="flex items-center space-x-2">
+                        <input type="checkbox" wire:model="queryFilters.{{$title}}" id="{{$title}}_{{Str::lower($option)}}" value="{{$option}}"> <label for="">{{$option}} ({{$count}})</label>
+                    </div>
+                    @endforeach
+                    @endforeach
+                </div>
+                @endif
             </div>
         </div>
     </div>
     <div class="col-span-5 sm:px-6 lg:px-8">
         <div class="mb-6">
-            Found 0 products matching your filters
+            Bu kategoriye ait {{$products->count()}} adet ürün bulundu.
         </div>
+        <hr>
 
-        <div class="overflow-hidden sm:rounded-lg grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+        <div class="overflow-hidden sm:rounded-lg grid lg:grid-cols-3 md:grid-cols-2 gap-4 mt-4">
             @foreach ($products as $product)
-    
+
             <a href="/products/{{$product->slug}}" class="p-6 bg-white border-b border-gray-200 space-y-4">
                 <img src="{{$product->getFirstMediaUrl()}}" class="w-full">
 

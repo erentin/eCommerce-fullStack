@@ -1,7 +1,7 @@
 {{-- {{dd($variation->product->getMedia()->first()->getUrl())}} --}}
 <div class="border-b py-3 flex items-start last:border-0 last:pb-0">
     <div class="w-20 mr-4">
-        <img src="{{$variation->getFirstMediaUrl('default','tumb200x200')}}" class="w-20">
+        <img src="{{$variation->getFirstMediaUrl('default','thumb200x200')}}" class="w-20">
     </div>
     <div class="space-y-2">
         <div>
