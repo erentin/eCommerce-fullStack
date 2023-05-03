@@ -18,7 +18,7 @@
             <div class="space-y-6">
                 @if ($category->products->count())
                 <div class="space-y-1">
-                    <div class="font-semibold">Max price ({{money(number_format($priceRange['max']) )}})</div>
+                    <div class="font-semibold">Maksimum Fiyat ({{money(number_format($priceRange['max']) )}})</div>
                     <div class="flex items-center space-x-2">
                         <input type="range" min="0" max="{{$maxPrice}}" wire:model="priceRange.max">
                     </div>

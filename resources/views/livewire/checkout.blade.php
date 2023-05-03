@@ -2,10 +2,10 @@
     <div class="overflow-hidden sm:rounded-lg grid grid-cols-6 grid-flow-col gap-4">
         <div class="p-6 bg-white border-b border-gray-200 col-span-3 self-start space-y-6">
             <div class="space-y-3">
-                <div class="font-semibold text-lg">Account details</div>
+                <div class="font-semibold text-lg">Hesap Detayları</div>
                 @guest    
                 <div>
-                    <label for="email">Email</label>
+                    <label for="email">E-Posta</label>
                     <x-text-input id="email" class="block mt-1 w-full" type="text" name="email" wire:model.defer="accountForm.email"/>
                     @error('accountForm.email')
                     <div class="mt-2 font-semibold text-red-500">
@@ -17,7 +17,7 @@
             </div>
 
             <div class="space-y-3">
-                <div class="font-semibold text-lg">Shipping</div>
+                <div class="font-semibold text-lg">Gönderim Adresi</div>
 
                 <x-select class="w-full" wire:model="addressSelect">
                     <option value="" disabled>{{Auth()->user() ? "Kayıtlı Adresinizi Seçebilirsiniz" : "Adres Seçebilmek için Giriş Yapmalısınız"}}</option>
@@ -31,7 +31,7 @@
 
                 <div class="space-y-3">
                     <div>
-                        <label for="address">Address</label>
+                        <label for="address">Adres</label>
                         <x-text-input id="address" class="block mt-1 w-full" type="text" name="address" wire:model.defer="shippingForm.address"/>
 
                         @error('shippingForm.address')
@@ -43,7 +43,7 @@
 
                     <div class="grid grid-cols-2 gap-4">
                         <div class="col-span-1">
-                            <label for="city">City</label>
+                            <label for="city">Şehir</label>
                             <x-text-input id="city" class="block mt-1 w-full" type="text" name="city" wire:model.defer="shippingForm.city" />
 
                             @error('shippingForm.city')
@@ -53,7 +53,7 @@
                             @enderror
                         </div>
                         <div class="col-span-1">
-                            <label for="postcode">Postal code</label>
+                            <label for="postcode">Posta Kodu</label>
                             <x-text-input id="postcode" class="block mt-1 w-full" type="text" name="postcode" wire:model.defer="shippingForm.postcode" />
 
                             @error('shippingForm.postcode')
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="space-y-3">
-                <div class="font-semibold text-lg">Delivery</div>
+                <div class="font-semibold text-lg">Kargo Firması</div>
                 <div class="space-y-1">
                     <x-select class="w-full" wire:model="shippingTypeId">
                         @foreach ($shippingTypes as $shippingType)    
@@ -77,10 +77,16 @@
             </div>
 
             <div class="space-y-3">
-                <div class="font-semibold text-lg">Payment</div>
+                <div class="font-semibold text-lg">Ödeme</div>
 
                 <div>
-                    Stripe card form
+                    Kapıda Ödeme
+                </div>
+                <div>
+                    Havale/Eft
+                </div>
+                <div>
+                    Kredi Kartı/ Banka Kartı
                 </div>
             </div>
         </div>
@@ -102,7 +108,7 @@
 
                             <div class="flex items-center text-sm">
                                 <div class="mr-1 font-semibold">
-                                    Quantity: {{$variation->pivot->quantity}}<span class="text-gray-400 mx-1">/</span>
+                                    Adet: {{$variation->pivot->quantity}}<span class="text-gray-400 mx-1">/</span>
                                 </div>
                                 
                                 @foreach ($variation->ancestorsAndSelf as $ancestor)   
@@ -120,23 +126,23 @@
             <div class="space-y-4">
                 <div class="space-y-1">
                     <div class="space-y-1 flex items-center justify-between">
-                        <div class="font-semibold">Subtotal</div>
+                        <div class="font-semibold">Alt Toplam</div>
                         <h1 class="font-semibold">{{$cart->formattedSubtotal()}}</h1>
                     </div>
 
                     <div class="space-y-1 flex items-center justify-between">
-                        <div class="font-semibold">Shipping ({{$this->shippingType->title}})</div>
+                        <div class="font-semibold">Kargo ({{$this->shippingType->title}})</div>
                         <h1 class="font-semibold">{{$this->shippingType->formattedPrice()}}</h1>
                     </div>
 
 
                     <div class="space-y-1 flex items-center justify-between">
-                        <div class="font-semibold">Total</div>
+                        <div class="font-semibold">Toplam</div>
                         <h1 class="font-semibold">{{$this->formattedTotal}}</h1>
                     </div>
                 </div>
 
-                <x-primary-button type="submit">Confirm order and pay</x-button>
+                <x-primary-button type="submit">Onayla ve Ödemeye Geç</x-button>
             </div>
         </div>
     </div>

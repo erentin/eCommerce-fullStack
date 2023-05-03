@@ -58,7 +58,7 @@ class Order extends Model
         });
     }
 
-    protected $statusses = [
+    public $statusses = [
         'placed_at',
         'packaged_at',
         'shipped_at'

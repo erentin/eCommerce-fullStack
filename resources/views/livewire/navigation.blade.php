@@ -1,4 +1,6 @@
+
 <nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+    <div class="w-full bg-white h-10 border-b border-qgray-border quomodo-shop-top-bar"><div class="container-x mx-auto h-full"><div class="flex justify-between items-center h-full"><div class="topbar-nav"><ul class="flex space-x-6"><li><a href="/"><span class="text-xs leading-6 text-qblack font-500">Account</span></a></li><li><a href="/tracking-order"><span class="text-xs leading-6 text-qblack font-500">Track Order</span></a></li><li><a href="/faq"><span class="text-xs leading-6 text-qblack font-500">Support</span></a></li></ul></div><div class="topbar-dropdowns sm:block hidden"><div class="flex space-x-6"><div class="country-select flex space-x-1 items-center"><div><img src="/assets/images/country-logo-16x16.png" width="16" height="16" alt="country logo" class="overflow-hidden rounded-full"></div><div class="my-select-box w-fit"><button type="button" class="my-select-box-btn "><span>United State</span></button><div class="my-select-box-section "><ul class="list"><li class="selected">United State</li><li class="">Bangladesh</li><li class="">India</li></ul></div></div><div><svg width="10" height="5" viewBox="0 0 10 5" fill="none" class="fill-current qblack" xmlns="http://www.w3.org/2000/svg"><rect x="9.18359" y="0.90918" width="5.78538" height="1.28564" transform="rotate(135 9.18359 0.90918)"></rect><rect x="5.08984" y="5" width="5.78538" height="1.28564" transform="rotate(-135 5.08984 5)"></rect></svg></div></div><div class="currency-select flex space-x-1 items-center"><div class="my-select-box w-fit"><button type="button" class="my-select-box-btn "><span>USD</span></button><div class="my-select-box-section "><ul class="list"><li class="selected">USD</li><li class="">BDT</li></ul></div></div><svg width="10" height="5" viewBox="0 0 10 5" fill="none" class="fill-current qblack" xmlns="http://www.w3.org/2000/svg"><rect x="9.18359" y="0.90918" width="5.78538" height="1.28564" transform="rotate(135 9.18359 0.90918)"></rect><rect x="5.08984" y="5" width="5.78538" height="1.28564" transform="rotate(-135 5.08984 5)"></rect></svg></div><div class="language-select flex space-x-1 items-center"><div class="my-select-box w-fit"><button type="button" class="my-select-box-btn "><span>Bangla</span></button><div class="my-select-box-section "><ul class="list"><li class="selected">Bangla</li><li class="">english</li></ul></div></div><svg width="10" height="5" viewBox="0 0 10 5" fill="none" class="fill-current qblack" xmlns="http://www.w3.org/2000/svg"><rect x="9.18359" y="0.90918" width="5.78538" height="1.28564" transform="rotate(135 9.18359 0.90918)"></rect><rect x="5.08984" y="5" width="5.78538" height="1.28564" transform="rotate(-135 5.08984 5)"></rect></svg></div></div></div></div></div></div>
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -17,7 +19,7 @@
                     </x-nav-link>
 
                     <div class="flex items-center flex-grow">
-                        <input type="search" placeholder="Search for products" class="flex-grow text-sm h-10 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" wire:model="searchQuery">
+                        <input type="search" placeholder="Aramak istediğiniz ürün" class="flex-grow text-sm h-10 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" wire:model="searchQuery">
                     </div>
                     
                 </div>
@@ -25,15 +27,28 @@
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6 space-x-8">
-                <a href="/cart" class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                Cart ({{$this->cart->contentsCount()}})</a>
+               
+                <div class="relative">
+                    <a href="/cart"
+                        class="inline-block px-4 py-2 text-base font-medium text-white border border-transparent rounded-md hover:bg-opacity-75">
+                        <svg fill="#000000" width="24" height="24" viewBox="0 0 32 32" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M31.739 8.875c-0.186-0.264-0.489-0.422-0.812-0.422h-21.223l-1.607-5.54c-0.63-2.182-2.127-2.417-2.741-2.417h-4.284c-0.549 0-0.993 0.445-0.993 0.993s0.445 0.993 0.993 0.993h4.283c0.136 0 0.549 0 0.831 0.974l5.527 20.311c0.12 0.428 0.511 0.724 0.956 0.724h13.499c0.419 0 0.793-0.262 0.934-0.657l4.758-14.053c0.11-0.304 0.064-0.643-0.122-0.907zM25.47 22.506h-12.046l-3.161-12.066h19.253zM23.5 26.504c-1.381 0-2.5 1.119-2.5 2.5s1.119 2.5 2.5 2.5 2.5-1.119 2.5-2.5c0-1.381-1.119-2.5-2.5-2.5zM14.5 26.504c-1.381 0-2.5 1.119-2.5 2.5s1.119 2.5 2.5 2.5 2.5-1.119 2.5-2.5c0-1.381-1.119-2.5-2.5-2.5z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="/cart" class="absolute right-0 inline-block px-1 py-1 text-xs bg-gray-100 rounded-full">{{$this->cart->contentsCount()}}</a>
 
+                </div>
 
                 @guest
 
-                <a href="/login" class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">Login</a>
-
-                <a href="/register" class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">Register</a>
+                <a href="/login"
+                        class="inline-block px-4 py-2 text-base font-medium text-indigo-600 bg-white border border-transparent rounded-md hover:bg-indigo-50">
+                        Giriş Yap</a>
+                <a href="/register" class="inline-block px-4 py-2 text-base font-medium text-indigo-600 bg-white border border-transparent rounded-md hover:bg-indigo-50">Kayıt
+                        Ol</a>
                     
                 @endguest
 
@@ -54,11 +69,11 @@
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                            {{ __('Profil') }}
                         </x-dropdown-link>
 
                         <x-dropdown-link :href="route('orders')">
-                                {{ __('Orders') }}
+                                {{ __('Siparişler') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -68,7 +83,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Çıkış Yap') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -136,10 +151,10 @@
                 </a>
                 @empty
             </div>
-            No Products Found.
+            Herhangi bir ürün bulunamadı.
             @endforelse
             <br>
-            <a href="#" class="inline-block text-indigo-500 mt-6" wire:click="clearSearch">Clear search</a>
+            <a href="#" class="inline-block text-indigo-500 mt-6" wire:click="clearSearch">Aramayı temizle</a>
         </div>
     @endif
     
