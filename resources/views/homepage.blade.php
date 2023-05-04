@@ -1,13 +1,20 @@
 <x-app-layout>
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="overflow-hidden grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                @foreach ($categories as $category)
-                    
-                <div class="ml-4">
-                    <a href="/categories/{{ $category->slug }}" class="{{ $category->parent_id === null ? 'font-bold' : '' }}">{{ $category->title }}</a>
-                @endforeach
+    <div class="w-full bg-white h-4/5">
+        <div class="grid w-full grid-cols-2 ">
+            <div class="w-full h-full transition-all hover:scale-105">
+                <img class="w-full h-full" src="https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/w_441,c_limit/8178f277-0754-4ee0-a419-9fa79840019a/resmi-nike-sitesi.jpg" />
             </div>
+            <div class="relative w-full h-full transition-all hover:scale-105">
+                <img class="w-full h-full" src="https://www.soccerbible.com/media/124572/adi-3-min.jpg" />
+
+            </div>
+
         </div>
+
+
+
+
+
     </div>
+
 </x-app-layout>
