@@ -4,7 +4,7 @@
     </div>
 
     <x-select class="w-full" wire:model="selectedVariation">
-        <option value="">Choose an option</option>
+        <option value="">Seçim Yapınız</option>
 
         @foreach ($variations as $variation)   
 

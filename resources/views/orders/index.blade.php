@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Orders
+            Siparişler
         </h2>
     </x-slot>
 
@@ -45,7 +45,7 @@
 
                                 <div class="flex items-center text-sm">
                                     <div class="mr-1 font-semibold">
-                                        Quantity: {{$variation->pivot->quantity
+                                        Adet: {{$variation->pivot->quantity
                                         }} <span class="text-gray-400 mx-1">/</span>
                                     </div>
                                     @foreach ($variation->ancestorsAndSelf as $ancestor)      

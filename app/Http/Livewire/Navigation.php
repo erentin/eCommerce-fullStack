@@ -9,7 +9,7 @@ use Livewire\Component;
 class Navigation extends Component
 {
 
-    public $searchQuery = '';
+    public $searchQuery;
 
     protected $listeners = [
         'cart.updated' => '$refresh'
@@ -33,6 +33,8 @@ class Navigation extends Component
         return view('livewire.navigation',[
 
             'products' => $products,
+            'searchQuery' => $this->searchQuery,
         ]);
+
     }
 }

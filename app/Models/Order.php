@@ -68,4 +68,6 @@ class Order extends Model
     {
         return collect($this->statusses)->last( fn ($status) => filled($this->{$status}) );
     }
+
+
 }

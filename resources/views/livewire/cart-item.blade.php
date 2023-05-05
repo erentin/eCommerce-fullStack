@@ -30,7 +30,7 @@
             </div>
 
             <button class="text-sm" wire:click="remove">
-                Remove
+                Kaldır
             </button>
         </div>
     </div>

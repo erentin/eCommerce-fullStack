@@ -1,6 +1,16 @@
 
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
-    <div class="w-full bg-white h-10 border-b border-qgray-border quomodo-shop-top-bar"><div class="container-x mx-auto h-full"><div class="flex justify-between items-center h-full"><div class="topbar-nav"><ul class="flex space-x-6"><li><a href="/"><span class="text-xs leading-6 text-qblack font-500">Account</span></a></li><li><a href="/tracking-order"><span class="text-xs leading-6 text-qblack font-500">Track Order</span></a></li><li><a href="/faq"><span class="text-xs leading-6 text-qblack font-500">Support</span></a></li></ul></div><div class="topbar-dropdowns sm:block hidden"><div class="flex space-x-6"><div class="country-select flex space-x-1 items-center"><div><img src="/assets/images/country-logo-16x16.png" width="16" height="16" alt="country logo" class="overflow-hidden rounded-full"></div><div class="my-select-box w-fit"><button type="button" class="my-select-box-btn "><span>United State</span></button><div class="my-select-box-section "><ul class="list"><li class="selected">United State</li><li class="">Bangladesh</li><li class="">India</li></ul></div></div><div><svg width="10" height="5" viewBox="0 0 10 5" fill="none" class="fill-current qblack" xmlns="http://www.w3.org/2000/svg"><rect x="9.18359" y="0.90918" width="5.78538" height="1.28564" transform="rotate(135 9.18359 0.90918)"></rect><rect x="5.08984" y="5" width="5.78538" height="1.28564" transform="rotate(-135 5.08984 5)"></rect></svg></div></div><div class="currency-select flex space-x-1 items-center"><div class="my-select-box w-fit"><button type="button" class="my-select-box-btn "><span>USD</span></button><div class="my-select-box-section "><ul class="list"><li class="selected">USD</li><li class="">BDT</li></ul></div></div><svg width="10" height="5" viewBox="0 0 10 5" fill="none" class="fill-current qblack" xmlns="http://www.w3.org/2000/svg"><rect x="9.18359" y="0.90918" width="5.78538" height="1.28564" transform="rotate(135 9.18359 0.90918)"></rect><rect x="5.08984" y="5" width="5.78538" height="1.28564" transform="rotate(-135 5.08984 5)"></rect></svg></div><div class="language-select flex space-x-1 items-center"><div class="my-select-box w-fit"><button type="button" class="my-select-box-btn "><span>Bangla</span></button><div class="my-select-box-section "><ul class="list"><li class="selected">Bangla</li><li class="">english</li></ul></div></div><svg width="10" height="5" viewBox="0 0 10 5" fill="none" class="fill-current qblack" xmlns="http://www.w3.org/2000/svg"><rect x="9.18359" y="0.90918" width="5.78538" height="1.28564" transform="rotate(135 9.18359 0.90918)"></rect><rect x="5.08984" y="5" width="5.78538" height="1.28564" transform="rotate(-135 5.08984 5)"></rect></svg></div></div></div></div></div></div>
+    
+<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 relative z-50">
+    
+    <div class="flex h-[36px] bg-gray-100 justify-center items-center gap-20">
+    
+        <a href="/categories/nike" class="text-black font-bold">Nike</a>
+        <a href="/categories/adidas" class="text-black font-bold">Adidas</a>
+        <a href="/categories/puma" class="text-black font-bold">Puma</a>
+        <a href="/categories/jordan" class="text-black font-bold">Jordan</a>
+    
+    </div>
+
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -13,13 +23,11 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex flex-grow">
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                        {{ __('Homepage') }}
-                    </x-nav-link>
-
-                    <div class="flex items-center flex-grow">
-                        <input type="search" placeholder="Aramak istediğiniz ürün" class="flex-grow text-sm h-10 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" wire:model="searchQuery">
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex flex-grow">    
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex flex-grow">
+                        <div class="flex items-center flex-grow">
+                            <input type="search" wire:model.debounce.500ms="searchQuery" placeholder="Search for products" class="flex-grow text-sm h-10 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        </div>
                     </div>
                     
                 </div>
@@ -143,7 +151,7 @@
         <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div class="grid grid-cols-2 column-gap-6">
                 @forelse ($products as $product)    
-                <a href="/" class="border-b py-3 space-y-2 flex items-center">
+                <a href="products/{{$product->slug}}" class="border-b py-3 space-y-2 flex items-center">
                     <div>
                         <div class="font-semibold text-lg">{{$product->formattedPrice($product->price)}}</div>
                         <div>{{$product->title}}</div>
@@ -157,6 +165,4 @@
             <a href="#" class="inline-block text-indigo-500 mt-6" wire:click="clearSearch">Aramayı temizle</a>
         </div>
     @endif
-    
-
 </nav>
