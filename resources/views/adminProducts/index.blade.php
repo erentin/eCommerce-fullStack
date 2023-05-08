@@ -79,17 +79,17 @@
                            <svg class="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                               <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
                            </svg>
-                           <span class="ml-3 flex-1 whitespace-nowrap">Ürün Yönetimi</span>
+                           <span class="ml-3 flex-1 whitespace-nowrap">Kanban (YAKINDA)</span>
                            <span class="bg-gray-200 text-gray-800 ml-3 text-sm font-medium inline-flex items-center justify-center px-2 rounded-full">Pro</span>
                         </a>
                      </li>
                      <li>
-                        <a href="/admin/orders" t class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
+                        <a href="#" target="_blank" class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
                            <svg class="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                               <path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"></path>
                               <path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path>
                            </svg>
-                           <span class="ml-3 flex-1 whitespace-nowrap">Siparişler</span>
+                           <span class="ml-3 flex-1 whitespace-nowrap">Inbox (YAKINDA)</span>
                            <span class="bg-gray-200 text-gray-800 ml-3 text-sm font-medium inline-flex items-center justify-center px-2 rounded-full">Pro</span>
                         </a>
                      </li>
@@ -102,11 +102,11 @@
                         </a>
                      </li>
                      <li>
-                        <a href="/admin/products" class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
+                        <a href="" class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
                            <svg class="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                               <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path>
                            </svg>
-                           <span class="ml-3 flex-1 whitespace-nowrap">Ürünler</span>
+                           <span class="ml-3 flex-1 whitespace-nowrap">Products</span>
                         </a>
                      </li>
                      <li>
@@ -142,8 +142,8 @@
                   <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
                      <div class="mb-4 flex items-center justify-between">
                         <div>
-                           <h3 class="text-xl font-bold text-gray-900 mb-2">Son Siparişler</h3>
-                           <span class="text-base font-normal text-gray-500">Son 30 Günün Siparişleri Gözükmektedir</span>
+                           <h3 class="text-xl font-bold text-gray-900 mb-2">SİPARİŞ ÖZETİ</h3>
+                           <span class="text-base font-normal text-gray-500"></span>
                         </div>
                         <div class="flex-shrink-0">
                            <a href="#" class="text-sm font-medium text-cyan-600 hover:bg-gray-100 rounded-lg p-2">Hepsini İncele</a>
@@ -153,63 +153,35 @@
                         <div class="overflow-x-auto rounded-lg">
                            <div class="align-middle inline-block min-w-full">
                               <div class="shadow overflow-hidden sm:rounded-lg">
-                                 <table class="min-w-full divide-y divide-gray-200">
-                                    <thead class="bg-gray-50">
-                                       <tr>
-                                          <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                             Kimden
-                                          </th>
-                                          <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            E-Mail
-                                         </th>
-                                          <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                             Zaman
-                                          </th>
-                                          <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Kargo Firması
-                                         </th>
-                                          <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                             Miktar
-                                          </th>
-                                          <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                             Detay
-                                          </th>
-                                       </tr>
-                                    </thead>
-                                    @foreach($orders->take(10) as $order)
-                                    <tbody class="bg-white">
-                                       <tr>
-                                       
-                                          @if($order->user)
-                                          <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                                            <span class="font-semibold">{{$order->user->name}}</span> (Kullanıcı)
-                                          </td>
-                                          @else 
-                                          <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                                            <span class="font-semibold">Ziyaretçi Üye</span>
-                                          </td>
-                                          @endif
-                                          <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                                            {{$order->email}}
-                                          </td>
-                                          <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                             {{$order->created_at->diffForHumans()}}
-                                          </td>
-                                          <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                            {{$order->shippingType->title}}
-                                         </td>
-                                         <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                           {{$order->subtotal + $order->shippingType->price}}₺
-                                         </td>
-                                         <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                          <a href="{{route('admin-order',$order->id)}}">DETAYA GİT</a>
-                                        </td>
-                                       
-                                       </tr>
-                                    </tbody>
-                                   @endforeach
-                                 </table>
-                                 {{$orders->links()}}
+                                
+
+
+                                <div class="col-span-30 sm:px-6 lg:px-8">
+                                    <div class="mb-6">
+                                        Bu kategoriye ait {{$products->count()}} adet ürün bulundu.
+                                    </div>
+                                    <hr>
+                            
+                                    <div class="overflow-hidden sm:rounded-lg grid lg:grid-cols-12 md:grid-cols-2 gap-4 mt-4">
+                                        @foreach ($products as $product)
+                            
+                                        <a href="/products/{{$product->slug}}" class="p-6 bg-white border-b border-gray-200 space-y-4">
+                                            <img src="{{$product->getFirstMediaUrl()}}" class="w-full">
+                            
+                                            <div class="space-y-1">
+                                                <div>{{$product->title}}</div>
+                                                <div class="font-semibold text-lg">
+                                                    {{$product->formattedPrice()}}
+                                                </div>
+                                            </div>
+                                        </a>
+                                        @endforeach
+                            
+                                    </div>
+                                </div>
+                               
+                                
+                        
                               </div>
                            </div>
                         </div>
@@ -217,115 +189,15 @@
                   </div>
                   
                </div>
-               <div class="mt-4 w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-                  <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
-                     <div class="flex items-center">
-                        <div class="flex-shrink-0">
-                           <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900">{{$users->count()}}</span>
-                           <h3 class="text-base font-normal text-gray-500">Toplam Kayıtlı Kullanıcı</h3>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
-                     <div class="flex items-center">
-                        <div class="flex-shrink-0">
-                           <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900">{{$carts->count()}}</span>
-                           <h3 class="text-base font-normal text-gray-500">Son 30 Gündeki Toplam Ziyaretçi Sayısı</h3>
-                        </div>
-                        
-                     </div>
-                  </div>
-                  <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
-                     <div class="flex items-center">
-                        <div class="flex-shrink-0">
-                           <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900">{{$ordersTotalCount}}</span>
-                           <h3 class="text-base font-normal text-gray-500">Son 30 Gündeki Toplam Sipariş Sayısı</h3>
-                        </div>
-                        
-                     </div>
-                  </div>
-               </div>
-               <div class="grid grid-cols-1 2xl:grid-cols-2 xl:gap-4 my-4">
-                  <div class="bg-white shadow rounded-lg mb-4 p-4 sm:p-6 h-full">
-                     <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-bold leading-none text-gray-900">Son Üye Olan Kullanıcılar</h3>
-                        <a href="#" class="text-sm font-medium text-cyan-600 hover:bg-gray-100 rounded-lg inline-flex items-center p-2">
-                        Tümünü Görüntüle
-                        </a>
-                     </div>
-                     <div class="flow-root">
-                        <ul role="list" class="divide-y divide-gray-200">
-                          @foreach($users->take(10) as $user)
-                           <li class="py-3 sm:py-4">
-                              <div class="flex items-center space-x-4">
-                                 <div class="flex-shrink-0">
-                                    <img class="h-8 w-8 rounded-full" src="https://cdn.avixa.org/production/images/default-source/icons/just-for-you-icon.png?sfvrsn=3c0f0e5b_6" alt="Neil image">
-                                 </div>
-                                 <div class="flex-1 min-w-0">
-                                    <p class="text-sm font-medium text-gray-900 truncate">
-                                       {{$user->name}}
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate">
-                                       <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="17727a767e7b57607e7973646372653974787a">[email&#160;protected]</a>
-                                    </p>
-                                 </div>
-                                 <div class="inline-flex items-center text-base font-semibold text-gray-900">
-                                    {{$user->created_at->diffForHumans()}}
-                                 </div>
-                              </div>
-                           </li>
-                           @endforeach
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
-                     <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl leading-none font-bold text-gray-900 mb-10">Stok Durumları</h3>
-                        <a href="#" class="text-sm font-medium text-cyan-600 hover:bg-gray-100 rounded-lg inline-flex items-center p-2">
-                           Tümünü Görüntüle
-                        </a>
-                     </div>
-                     <div class="block w-full overflow-x-auto">
-                        <table class="items-center w-full bg-transparent border-collapse">
-                           <thead>
-                              <tr>
-                                 <th class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">Ürün / Boyut / Renk</th>
-                                 <th class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">Stok Miktarı</th>
-                                 {{-- <th class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap min-w-140-px">Stok Yüzdesi</th> --}}
-                              </tr>
-                           </thead>
-                           <tbody class="divide-y divide-gray-100">
-                              @foreach ($stocks->take(10) as $stock)
-                              <tr class="text-gray-500">
-                                <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">{{$stock->variation->product->title}} - {{$stock->variation->title}} - {{$stock->variation->find($stock->variation->parent_id)->title}} </th>
-                                <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">{{$stock->variation->stockCount()}}</td>
-                                <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
-                                  {{-- <div class="flex items-center">
-                                    <span class="mr-2 text-xs font-medium">{{$stock->variation->stockCount()}}%</span>
-                                    <div class="relative w-full">
-                                      <div class="w-full bg-gray-200 rounded-sm h-2">
-                                        <div class="bg-cyan-600 h-2 rounded-sm" style="width: {{ $stock->variation->stockCount() }}%"></div>
-                                      </div>
-                                    </div>
-                                  </div> --}}
-                                </td>
-                              </tr>
-                              @endforeach
-                              
-
-                           </tbody>
-                        </table>
-                     </div>
-                  </div>
-               </div>
+               
             </div>
          </main>
          <footer class="bg-white md:flex md:items-center md:justify-between shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4">
             <ul class="flex items-center flex-wrap mb-6 md:mb-0">
-               <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">Şartlar ve koşullar</a></li>
-               <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">Gizlilik sözleşmesi</a></li>
-               <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">Lisans</a></li>
-               <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">Çerez politikası</a></li>
+               <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">Terms and conditions</a></li>
+               <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">Privacy Policy</a></li>
+               <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">Licensing</a></li>
+               <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">Cookie Policy</a></li>
                <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline">Contact</a></li>
             </ul>
             <div class="flex sm:justify-center space-x-6">

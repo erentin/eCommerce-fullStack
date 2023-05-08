@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminProductsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductShowController;
 use App\Http\Controllers\ProfileController;
@@ -27,9 +28,11 @@ Route::get('/orders/{order:uuid}/confirmation',OrderConfirmationIndexController:
 
 Route::get('/orders',OrderIndexController::class)->name('orders');
 
-Route::get('/admin',[AdminController::class,'index']);
-Route::get('/admin/orders',[AdminController::class,'orders']);
-Route::get('/admin/orders/{order:id}',[AdminController::class,'showOrder'])->name('admin-order');
+Route::get('/admin',[AdminController::class,'index'])->name('admin-index')->middleware('auth');
+Route::get('/admin/orders',[AdminController::class,'orders'])->middleware('auth');
+Route::get('/admin/orders/{order:id}',[AdminController::class,'showOrder'])->name('admin-order')->middleware('auth');
+
+Route::resource('/admin/products',AdminProductsController::class)->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

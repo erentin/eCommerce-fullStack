@@ -2,17 +2,30 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Variation;
 use App\Models\User;
 use App\Models\Stock;
 use App\Models\Cart;
 use App\Models\Order;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
-{
+{       
+
+    // public function __construct(User $user)
+    // {
+        
+
+    //     if (!($user && $user->email  == "admin@ecommerce.test")) {
+    //         abort(403, "ADMİN PANELE ERİŞİM İZNİNİZ YOK!");
+    //     };
+    // }
+    
+
     public function index()
     {
         $date = Carbon::today()->subDays(30);
