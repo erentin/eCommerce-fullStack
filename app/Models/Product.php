@@ -18,6 +18,8 @@ class Product extends Model implements HasMedia
     use InteractsWithMedia;
     use Searchable;
 
+    protected $fillable = ['title', 'slug', 'description', 'price', 'live_at'];
+
     public static function booted()
     {
         static::addGlobalScope(new LiveScope);   

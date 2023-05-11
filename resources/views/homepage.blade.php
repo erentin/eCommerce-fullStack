@@ -3,7 +3,7 @@
     <div class="w-full h-full bg-white">
         <div class="grid w-full h-full grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 gap-y-4 lg:gap-0">
             <div class="relative w-full h-full cursor-pointer">
-                <a href="">
+                <a href="/categories/nike">
                     <div class="relative w-full h-full bg-black-rgba">
                         <div class="absolute top-0 left-0 z-40 w-full h-full bg-black-rgba">
 
@@ -20,7 +20,7 @@
 
             </div>
             <div class="relative w-full h-full cursor-pointer">
-                <a>
+                <a href="/categories/adidas">
                     <div class="relative w-full h-full ">
                         <div class="absolute top-0 left-0 z-40 w-full h-full bg-black-rgba">
 

@@ -23,16 +23,19 @@ Route::get('/categories/{category:slug}', CategoryShowController::class);
 
 Route::get('/products/{product:slug}',ProductShowController::class);
 
-Route::get('/orders/{order:uuid}/confirmation',OrderConfirmationIndexController::class)
-    ->name('orders.confirmation');
+Route::get('/orders/{order:uuid}/confirmation',OrderConfirmationIndexController::class)->name('orders.confirmation');
 
 Route::get('/orders',OrderIndexController::class)->name('orders');
 
-Route::get('/admin',[AdminController::class,'index'])->name('admin-index')->middleware('auth');
-Route::get('/admin/orders',[AdminController::class,'orders'])->middleware('auth');
-Route::get('/admin/orders/{order:id}',[AdminController::class,'showOrder'])->name('admin-order')->middleware('auth');
+// ADMIN ROUTES
+Route::get('/admin',[AdminController::class,'index'])->name('admin-index')->middleware('admin');
+Route::get('/admin/create',[AdminController::class,'create'])->name('admin-create');
+Route::post('/admin/store',[AdminController::class,'store'])->name('admin-product-store');
+Route::post('/admin/store/variation',[AdminController::class,'storeVariation'])->name('admin-variation-store');
+Route::get('/admin/orders',[AdminController::class,'orders']);
+Route::get('/admin/orders/{order:id}',[AdminController::class,'showOrder'])->name('admin-order');
 
-Route::resource('/admin/products',AdminProductsController::class)->middleware('auth');
+Route::resource('/admin/products',AdminProductsController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

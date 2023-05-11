@@ -18,6 +18,8 @@ class Variation extends Model implements HasMedia
     use HasRecursiveRelationships;
     use InteractsWithMedia;
 
+    protected $fillable = ['product_id','title','price','type','sku','parent_id','order','live_at'];
+
     public function product()
     {
         return $this->belongsTo(Product::class);
