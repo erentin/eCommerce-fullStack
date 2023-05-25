@@ -190,8 +190,8 @@
                            <tbody class="divide-y divide-gray-100">
                               @foreach ($stocks->take(10) as $stock)
                               <tr class="text-gray-500">
-                                <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">{{$stock->variation->product->title}} - {{$stock->variation->title}} - {{$stock->variation->find($stock->variation->parent_id)->title}} </th>
-                                <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">{{$stock->variation->stockCount()}}</td>
+                                {{-- <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">{{$stock->variation->product->title}} - {{$stock->variation->title}} - {{$stock->variation->find($stock->variation->parent_id)->title}} </th> --}}
+                                {{-- <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">{{$stock->variation->stockCount()}}</td>
                                 <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
                                   {{-- <div class="flex items-center">
                                     <span class="mr-2 text-xs font-medium">{{$stock->variation->stockCount()}}%</span>
@@ -200,8 +200,9 @@
                                         <div class="bg-cyan-600 h-2 rounded-sm" style="width: {{ $stock->variation->stockCount() }}%"></div>
                                       </div>
                                     </div>
-                                  </div> --}}
-                                </td>
+                                  </div>  
+                                 
+                                </td> --}}
                               </tr>
                               @endforeach
                               

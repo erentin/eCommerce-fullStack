@@ -28,11 +28,11 @@ class Navigation extends Component
     public function render(CartInterface $cart)
     {
 
-        /*         $products = Product::search($this->searchQuery)->get();
- */
+        $products = Product::search($this->searchQuery)->get();
+ 
         return view('livewire.navigation', [
 
-            /*             'products' => $products, */
+            'products' => $products,
             'searchQuery' => $this->searchQuery,
         ]);
     }

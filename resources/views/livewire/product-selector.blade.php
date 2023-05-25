@@ -10,7 +10,7 @@
             <div class="font-semibold text-lg">
                 {{$skuVariant->formattedPrice()}}
             </div>
-            <x-primary-button wire:click.prevent="addToCart">Add to Cart</x-primary-button>
+            <x-primary-button wire:click.prevent="addToCart">Sepete Ekle</x-primary-button>
         </div>
     @endif
 </div>

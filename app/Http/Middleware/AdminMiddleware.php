@@ -10,8 +10,11 @@ class AdminMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
+        
         $allowedEmails = ["erentin@outlook.com","info@ketencek.com"];
-        $userEmail = Auth::user()->email;
+        if(Auth()->user()){
+            $userEmail = Auth::user()->email;
+        }
 
         if (Auth::check() && in_array($userEmail,$allowedEmails) ) {
             return $next($request);

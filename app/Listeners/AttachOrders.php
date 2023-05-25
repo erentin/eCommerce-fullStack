@@ -22,7 +22,7 @@ class AttachOrders
      */
     public function handle(Registered $event): void
     {
-        Order::where()('email',$event->user->email)->get()->each(function ($order) use ($event) {
+        Order::where('email',$event->user->email)->get()->each(function ($order) use ($event) {
             $order->user()->associate($event->user);
             $order->save();
         });

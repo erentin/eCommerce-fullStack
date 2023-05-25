@@ -4,7 +4,7 @@ x-show="body.length"
 x-cloak
 x-on:notification.window="body = $event.detail.body; 
 setTimeout(() => body = '',$event.detail.timeout || 2000)"
-class="fixed inset-0 flex px-4 py-6 items-start pointer-events-none"
+class="fixed inset-0 flex px-4 py-6 items-start pointer-events-none z-50"
 x-init="
 @if (session()->has('notification'))
     window.onload = () => {

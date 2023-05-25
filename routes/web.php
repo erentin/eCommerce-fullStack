@@ -32,10 +32,12 @@ Route::get('/admin',[AdminController::class,'index'])->name('admin-index')->midd
 Route::get('/admin/create',[AdminController::class,'create'])->name('admin-create');
 Route::post('/admin/store',[AdminController::class,'store'])->name('admin-product-store');
 Route::post('/admin/store/variation',[AdminController::class,'storeVariation'])->name('admin-variation-store');
-Route::get('/admin/orders',[AdminController::class,'orders']);
+Route::post('/admin/store/stock',[AdminController::class,'stockStore'])->name('admin-stock-store');
+Route::get('/admin/orders',[AdminController::class,'orders'])->name('admin-orders');
 Route::get('/admin/orders/{order:id}',[AdminController::class,'showOrder'])->name('admin-order');
 
-Route::resource('/admin/products',AdminProductsController::class);
+Route::get('/admin/users',[AdminController::class,'users'])->name('admin-users');
+Route::get('/admin/products',[AdminProductsController::class,'index'])->name('admin-products');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -82,6 +82,16 @@ class AdminController extends Controller
         return back();
     }
 
+    public function stockStore(Request $request)
+    {
+        $stock = Stock::create([
+            'variation_id' => $request->input('variationId'),
+            'amount' => $request->input('amount'),
+        ]);
+
+        return back();
+    }
+
     public function showOrder(Order $order)
     {
         $order = Order::find($order)->first();
@@ -101,6 +111,17 @@ class AdminController extends Controller
         return view("admin.products", [
             
             'orders' => $orders,
+            
+        ]);
+    }
+
+    public function users()
+    {
+        $users = User::latest()->paginate(20);
+
+        return view("admin.users", [
+            
+            'users' => $users,
             
         ]);
     }

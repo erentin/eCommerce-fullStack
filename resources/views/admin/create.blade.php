@@ -25,7 +25,7 @@
       <div id="main-content" class="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64">
          <main>
             <div class="pt-6 px-4">
-                <div class="w-full grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-1 gap-4">
+                <div class="w-full grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-2 gap-4">
                   
                   <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
                         <div class="mb-4 flex items-center justify-between">
@@ -66,6 +66,27 @@
                                  <input type="submit" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" value="EKLE"/>
                               </div>
                            </form>
+
+                           <div class="mt-10 mb-4 flex items-center justify-between">
+                              <div>
+                                 <h3 class="text-xl font-bold text-gray-900 mb-2">Stok Ekle veya Çıkar</h3>
+                                 <span class="text-base font-normal text-gray-500">Ürün Görsel ve Varyasyonları Varyasyon Yükle Bölümünden Yapılmaktadır.</span>
+                              </div>
+                           </div>
+                           <form action="{{route('admin-stock-store')}}" method="POST" class="grid grid-cols-2  gap-x-14">
+                              @csrf
+                              <div class="">
+                                 <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Varyasyon ID</label>
+                                 <input name="variationId" type="number" id="base-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                              </div>
+                              <div class="mb-6">
+                                 <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Eklenecek Stok Miktarı</label>
+                                 <input name="amount" type="number" id="base-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                              </div>
+
+                              <div>
+                                 <input type="submit" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" value="EKLE"/>
+                              </div>
                         </div>
 
                         

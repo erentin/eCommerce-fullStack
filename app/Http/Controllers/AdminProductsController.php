@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class AdminProductsController extends Controller
 {
-    public function index(Product $product)
+    public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(24);
 
         return view("adminProducts.index",[
             'products' => $products,
